@@ -1,6 +1,17 @@
 #  PROGRAMMING BASICS — (conditions, loops, functions)
 ---
 
+**Mental Model:** You are giving a computer a recipe.
+
+| Concept | Analogy |
+|---------|---------|
+| **Conditions** | If it's raining, take an umbrella; otherwise, don't. |
+| **Loops** | Repeat an action 10 times, or *while* food is not cooked, keep stirring. |
+| **Functions** | Wrap a set of steps (e.g., "make coffee") so you can call it anytime. |
+| **OOP** (Object-Oriented Programming) | Bundle data + actions into "things" (objects). A `Car` has `color` and can `drive()`. |
+
+---
+
 ## CONDITIONS (if / elif / else)
 
 ### What it does
@@ -310,7 +321,18 @@ def greet(name):
 message = greet("Sam")
 print(message)        # Hello Sam
 
+# OOP (simple class)
+class Dog:
+    def __init__(self, name):
+        self.name = name
+    def bark(self):
+        return "woof"
+
+my_dog = Dog("Rex")
+print(my_dog.bark())
+
 ```
+
 ---
 
 ## VOCABULARY CHEAT SHEET
@@ -339,5 +361,3 @@ print(message)        # Hello Sam
 | Infinite loop (program never stops) | Forgot to update variable in `while` loop | Add update statement inside the loop |
 
 ---
-
-**End of Programming Basics Notes**
