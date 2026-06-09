@@ -2,56 +2,6 @@
 
 ---
 
-| Topic | Description |
-|-------|-------------|
-| Programming basics | Conditions, loops, functions, OOP |
-| Data structures | Arrays, linked lists, stacks, queues |
-| Databases | SQL basics, queries |
-| Networking basics | IP, DNS, HTTP/HTTPS |
-| Operating systems basics | Processes, memory, file systems |
-
----
-
-# Programming Basics (Conditions, Loops, Functions, OOP)
-
-**Mental Model:** You are giving a computer a recipe.
-
-| Concept | Analogy |
-|---------|---------|
-| **Conditions** | If it's raining, take an umbrella; otherwise, don't. |
-| **Loops** | Repeat an action 10 times, or *while* food is not cooked, keep stirring. |
-| **Functions** | Wrap a set of steps (e.g., "make coffee") so you can call it anytime. |
-| **OOP** (Object-Oriented Programming) | Bundle data + actions into "things" (objects). A `Car` has `color` and can `drive()`. |
-
----
-
-```
-# condition
-age = 18
-if age >= 18:
-    print("adult")
-
-# loop
-for i in range(3):
-    print("hello")
-
-# function
-def greet(name):
-    return "Hi " + name
-
-# OOP (simple class)
-class Dog:
-    def __init__(self, name):
-        self.name = name
-    def bark(self):
-        return "woof"
-
-my_dog = Dog("Rex")
-print(my_dog.bark())
-```
-
----
-
 # Data Structures (Arrays, Linked Lists, Stacks, Queues)
 
 **Mental Model:**
