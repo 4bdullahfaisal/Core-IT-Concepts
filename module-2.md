@@ -1,15 +1,4 @@
-#  PROGRAMMING BASICS —  (conditions, loops, functions)
----
-
-**Mental Model:** You are giving a computer a recipe.
-
-| Concept | Analogy |
-|---------|---------|
-| **Conditions** | If it's raining, take an umbrella; otherwise, don't. |
-| **Loops** | Repeat an action 10 times, or *while* food is not cooked, keep stirring. |
-| **Functions** | Wrap a set of steps (e.g., "make coffee") so you can call it anytime. |
-| **OOP** (Object-Oriented Programming) | Bundle data + actions into "things" (objects). A `Car` has `color` and can `drive()`. |
-
+#  PROGRAMMING BASICS — (conditions, loops, functions)
 ---
 
 ## CONDITIONS (if / elif / else)
