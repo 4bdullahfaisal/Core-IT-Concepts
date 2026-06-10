@@ -4,7 +4,7 @@
 ## WHAT IS A NETWORK
 Two or more computers connected together to share data.
 
-### REAL LIFE ANALOGY
+## REAL LIFE ANALOGY
 A road system connecting houses. Data is the cars driving on roads.
 
 ---
