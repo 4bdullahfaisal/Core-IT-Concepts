@@ -1,4 +1,4 @@
-# OOP - FOUR PILLARS 
+# OOP — FOUR PILLARS 
 ---
 
 | Pillar | Definition| Python syntax |
