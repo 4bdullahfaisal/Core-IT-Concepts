@@ -96,22 +96,16 @@ Table: users
 | 3 | Carol | 22 | London |
 
 ```
-SELECT name FROM users;
+SELECT name FROM users;                           -- Returns: Alice, Bob, Carol
 ```
 
--- Returns: Alice, Bob, Carol
-
 ```
-SELECT * FROM users WHERE city = 'London';
+SELECT * FROM users WHERE city = 'London';        -- Returns: row 1 (Alice) and row 3 (Carol) 
 ```
 
--- Returns: row 1 (Alice) and row 3 (Carol)
-
 ```
-SELECT name, age FROM users WHERE age >= 25;
+SELECT name, age FROM users WHERE age >= 25;      -- Returns: Alice (25), Bob (30)
 ```
-
--- Returns: Alice (25), Bob (30)
 
 ### Comparison operators in SQL
 
@@ -130,32 +124,29 @@ SELECT name, age FROM users WHERE age >= 25;
 
 ### Basic INSERT
 
--- Insert a complete row
-
 ```
+
+-- Insert a complete row
 
 INSERT INTO users (id, name, age, city)
 
 VALUES (4, 'David', 28, 'Berlin');
 
-```
 
 -- Insert without id (if id auto-increments)
 
-
-```
 INSERT INTO users (name, age, city)
 
 VALUES ('Emma', 35, 'Madrid');
-```
+
 
 -- Insert multiple rows at once
 
-```
 INSERT INTO users (name, age, city)
 VALUES 
 ('Frank', 40, 'Rome'),
 ('Grace', 27, 'Amsterdam');
+
 ```
 
 ### Rules for INSERT
@@ -170,25 +161,23 @@ VALUES
 
 ### Basic UPDATE
 
+```
 -- Update one column for one row
 
-```
 UPDATE users 
 SET age = 26 
 WHERE id = 1;
-```
+
 
 -- Update multiple columns
 
-```
 UPDATE users 
 SET name = 'Robert', city = 'Vienna' 
 WHERE id = 2;
-```
+
 
 -- Update multiple rows (be careful!)
 
-```
 UPDATE users 
 SET city = 'Unknown' 
 WHERE city IS NULL;
@@ -196,15 +185,13 @@ WHERE city IS NULL;
 
 ### WARNING: Without WHERE
 
--- THIS UPDATES EVERY ROW IN THE TABLE
+- THIS UPDATES EVERY ROW IN THE TABLE
 
-```
-UPDATE users SET age = 18;
-```
+`UPDATE users SET age = 18;`
 
--- All users become age 18
+- All users become age 18
 
--- Always use WHERE unless you mean EVERY row
+- Always use WHERE unless you mean EVERY row
 
 ---
 
@@ -212,36 +199,33 @@ UPDATE users SET age = 18;
 
 ### Basic DELETE
 
+```
 -- Delete one specific row
 
-```
 DELETE FROM users WHERE id = 3;
-```
+
 
 -- Delete rows matching condition
 
-```
 DELETE FROM users WHERE age > 50;
-```
+
 
 -- Delete all rows (table becomes empty)
 
-```
 DELETE FROM users;
 ```
 
 ### WARNING: Same as UPDATE
 
+```
 -- THIS DELETES EVERY ROW
 
-```
 DELETE FROM users;
-```
 
 -- Always use WHERE unless you want empty table
 
-```
 DELETE FROM users WHERE id = 5;
+
 ```
 
 ---
@@ -290,15 +274,14 @@ CREATE TABLE products (
 
 ## DROP TABLE (Deleting entire table)
 
+```
 -- Deletes the entire table (all rows + structure)
 
-```
 DROP TABLE users;
-```
+
 
 -- Safer: check if exists first
 
-```
 DROP TABLE IF EXISTS users;
 ```
 
