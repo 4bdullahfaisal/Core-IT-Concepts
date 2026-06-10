@@ -1,4 +1,4 @@
-# DATABASES (SQL basics, queries)
+# DATABASES — (SQL basics, queries)
 
 ## WHAT IS A DATABASE
 
