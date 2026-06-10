@@ -10,7 +10,7 @@
 
 ---
 
-## PILLAR 1: ENCAPSULATION
+## ENCAPSULATION
 
 ### What it means
 
