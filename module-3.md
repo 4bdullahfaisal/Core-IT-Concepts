@@ -91,7 +91,163 @@ print(p.get_age())   # 25
 
 ---
 
-## PILLAR 2: INHERITANCE
+## ABSTRACTION
+
+### What it means
+
+Hide the complex details, show only the essential features.
+
+### Real life analogy
+
+Driving a car: You see steering wheel, pedals (simple interface). You don't see engine, fuel injection (complex details).
+
+### Abstraction vs Encapsulation
+
+| Pillar | What it hides | Why |
+|--------|---------------|-----|
+| Encapsulation | Data (variables) | To protect from invalid changes |
+| Abstraction | Implementation (how it works) | To reduce complexity |
+
+### Without abstraction (bad)
+
+```
+car = Car()
+car.ignition_on()
+car.fuel_pump_start()
+car.starter_motor_turn()
+car.engine_check()
+car.release_brake()
+car.press_gas()
+```
+
+### With abstraction (good)
+
+```
+car = Car()
+car.start()   # One simple method hides all those steps
+```
+
+### Private methods (internal helpers)
+
+```
+class CoffeeMachine:
+    def make_coffee(self):
+        self.__heat_water()
+        self.__grind_beans()
+        self.__brew()
+        return "Coffee ready"
+    
+    def __heat_water(self):    # private method (starts with __)
+        print("Heating water...")
+    
+    def __grind_beans(self):
+        print("Grinding beans...")
+    
+    def __brew(self):
+        print("Brewing coffee...")
+
+machine = CoffeeMachine()
+print(machine.make_coffee())   # User only needs this
+```
+
+### Abstract classes (forces child to implement methods)
+
+from abc import ABC, abstractmethod
+
+```
+class Payment(ABC):
+    @abstractmethod
+    def pay(self, amount):
+        pass   # Child MUST implement this
+
+class CreditCard(Payment):
+    def pay(self, amount):
+        return f"Paid {amount} with credit card"
+
+class Cash(Payment):
+    def pay(self, amount):
+        return f"Paid {amount} with cash"
+
+cc = CreditCard()
+print(cc.pay(100))
+```
+
+### Why abstraction matters
+
+| Without abstraction | With abstraction |
+|--------------------|------------------|
+| User needs to know everything | User needs to know one method |
+| Changes break user code | Changes hidden inside |
+| Hard to use | Easy to use |
+
+---
+
+## POLYMORPHISM
+
+### What it means
+
+The same method name works differently for different classes.
+
+### Word breakdown
+
+Poly = many, Morph = form, Polymorphism = many forms
+
+### Example
+
+```
+class Bird:
+    def fly(self):
+        return "Bird flies"
+
+class Airplane:
+    def fly(self):
+        return "Airplane flies with engines"
+
+class Superman:
+    def fly(self):
+        return "Superman flies with cape"
+
+things_that_fly = [Bird(), Airplane(), Superman()]
+
+for thing in things_that_fly:
+    print(thing.fly())
+
+```
+### Why polymorphism matters
+
+You can write code that works with any object that has a certain method.
+
+```
+def make_it_fly(flying_object):
+    print(flying_object.fly())
+
+make_it_fly(Bird())       # Bird flies
+make_it_fly(Airplane())   # Airplane flies with engines
+make_it_fly(Superman())   # Superman flies with cape
+```
+
+### Duck typing (Python's style)
+
+```
+class Duck:
+    def sound(self):
+        return "Quack"
+
+class Person:
+    def sound(self):
+        return "I can quack too"
+
+def make_sound(obj):
+    print(obj.sound())
+
+make_sound(Duck())    # Quack
+make_sound(Person())  # I can quack too
+
+Python doesn't care about the class name. Only cares that sound() exists.
+```
+---
+
+## INHERITANCE
 
 ### What it means
 
@@ -220,163 +376,6 @@ s = Square("blue", 4)
 print(c.get_color(), c.area())   # red 78.5
 print(s.get_color(), s.area())   # blue 16
 ```
-
----
-
-## PILLAR 3: POLYMORPHISM
-
-### What it means
-
-The same method name works differently for different classes.
-
-### Word breakdown
-
-Poly = many, Morph = form, Polymorphism = many forms
-
-### Example
-
-```
-class Bird:
-    def fly(self):
-        return "Bird flies"
-
-class Airplane:
-    def fly(self):
-        return "Airplane flies with engines"
-
-class Superman:
-    def fly(self):
-        return "Superman flies with cape"
-
-things_that_fly = [Bird(), Airplane(), Superman()]
-
-for thing in things_that_fly:
-    print(thing.fly())
-
-```
-### Why polymorphism matters
-
-You can write code that works with any object that has a certain method.
-
-```
-def make_it_fly(flying_object):
-    print(flying_object.fly())
-
-make_it_fly(Bird())       # Bird flies
-make_it_fly(Airplane())   # Airplane flies with engines
-make_it_fly(Superman())   # Superman flies with cape
-```
-
-### Duck typing (Python's style)
-
-```
-class Duck:
-    def sound(self):
-        return "Quack"
-
-class Person:
-    def sound(self):
-        return "I can quack too"
-
-def make_sound(obj):
-    print(obj.sound())
-
-make_sound(Duck())    # Quack
-make_sound(Person())  # I can quack too
-
-Python doesn't care about the class name. Only cares that sound() exists.
-```
-
----
-
-## PILLAR 4: ABSTRACTION
-
-### What it means
-
-Hide the complex details, show only the essential features.
-
-### Real life analogy
-
-Driving a car: You see steering wheel, pedals (simple interface). You don't see engine, fuel injection (complex details).
-
-### Abstraction vs Encapsulation
-
-| Pillar | What it hides | Why |
-|--------|---------------|-----|
-| Encapsulation | Data (variables) | To protect from invalid changes |
-| Abstraction | Implementation (how it works) | To reduce complexity |
-
-### Without abstraction (bad)
-
-```
-car = Car()
-car.ignition_on()
-car.fuel_pump_start()
-car.starter_motor_turn()
-car.engine_check()
-car.release_brake()
-car.press_gas()
-```
-
-### With abstraction (good)
-
-```
-car = Car()
-car.start()   # One simple method hides all those steps
-```
-
-### Private methods (internal helpers)
-
-```
-class CoffeeMachine:
-    def make_coffee(self):
-        self.__heat_water()
-        self.__grind_beans()
-        self.__brew()
-        return "Coffee ready"
-    
-    def __heat_water(self):    # private method (starts with __)
-        print("Heating water...")
-    
-    def __grind_beans(self):
-        print("Grinding beans...")
-    
-    def __brew(self):
-        print("Brewing coffee...")
-
-machine = CoffeeMachine()
-print(machine.make_coffee())   # User only needs this
-```
-
-### Abstract classes (forces child to implement methods)
-
-from abc import ABC, abstractmethod
-
-```
-class Payment(ABC):
-    @abstractmethod
-    def pay(self, amount):
-        pass   # Child MUST implement this
-
-class CreditCard(Payment):
-    def pay(self, amount):
-        return f"Paid {amount} with credit card"
-
-class Cash(Payment):
-    def pay(self, amount):
-        return f"Paid {amount} with cash"
-
-cc = CreditCard()
-print(cc.pay(100))
-```
-
-### Why abstraction matters
-
-| Without abstraction | With abstraction |
-|--------------------|------------------|
-| User needs to know everything | User needs to know one method |
-| Changes break user code | Changes hidden inside |
-| Hard to use | Easy to use |
 
 ---
 
