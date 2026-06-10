@@ -1,4 +1,4 @@
-# DATA STRUCTURES (Arrays, linked lists, stacks, queues)
+# DATA STRUCTURES — (Arrays, linked lists, stacks, queues)
 ---
 
 ## WHAT ARE DATA STRUCTURES
