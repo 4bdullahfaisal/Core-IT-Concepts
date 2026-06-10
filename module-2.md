@@ -1,4 +1,5 @@
-# OOP - COMPLETE NOTES (Classes + Objects + Four Pillars)
+# OOP - Classes, Objects
+---
 
 ## PART 1: CLASSES AND OBJECTS (BASICS)
 
