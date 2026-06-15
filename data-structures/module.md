@@ -5,7 +5,7 @@
 
 Ways to organize and store data in a computer.
 
-## ARRAYS // (LIST in PYTHON)
+## ARRAYS // (List in PYTHON)
 
 ### What is an array
 
