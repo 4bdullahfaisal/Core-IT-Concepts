@@ -55,33 +55,22 @@ Structured Query Language. The language used to talk to databases.
 
 ### Basic SELECT
 
--- Select everything from a table
+```sql
 
-```
+-- Select everything from a table
 SELECT * FROM users;
-```
 
 -- Select specific columns
-
-```
 SELECT name, age FROM users;
-```
 
 -- Select with condition (WHERE)
-
-```
 SELECT * FROM users WHERE age > 25;
-```
+
 
 -- Select with multiple conditions
-
-```
 SELECT * FROM users WHERE age > 20 AND age < 30;
-```
 
 -- Select one specific row by id
-
-```
 SELECT * FROM users WHERE id = 2;
 ```
 
@@ -95,16 +84,15 @@ Table: users
 | 2 | Bob | 30 | Paris |
 | 3 | Carol | 22 | London |
 
-```
-SELECT name FROM users;                           -- Returns: Alice, Bob, Carol
-```
+```sql
+SELECT name FROM users;
+-- Returns: Alice, Bob, Carol
 
-```
-SELECT * FROM users WHERE city = 'London';        -- Returns: row 1 (Alice) and row 3 (Carol) 
-```
+SELECT * FROM users WHERE city = 'London';
+-- Returns: row 1 (Alice) and row 3 (Carol) 
 
-```
-SELECT name, age FROM users WHERE age >= 25;      -- Returns: Alice (25), Bob (30)
+SELECT name, age FROM users WHERE age >= 25;
+-- Returns: Alice (25), Bob (30)
 ```
 
 ### Comparison operators in SQL
@@ -124,7 +112,7 @@ SELECT name, age FROM users WHERE age >= 25;      -- Returns: Alice (25), Bob (3
 
 ### Basic INSERT
 
-```
+```sql
 
 -- Insert a complete row
 
@@ -161,7 +149,7 @@ VALUES
 
 ### Basic UPDATE
 
-```
+```sql
 -- Update one column for one row
 
 UPDATE users 
@@ -199,7 +187,7 @@ WHERE city IS NULL;
 
 ### Basic DELETE
 
-```
+```sql
 -- Delete one specific row
 
 DELETE FROM users WHERE id = 3;
@@ -217,7 +205,7 @@ DELETE FROM users;
 
 ### WARNING: Same as UPDATE
 
-```
+```sql
 -- THIS DELETES EVERY ROW
 
 DELETE FROM users;
@@ -234,7 +222,7 @@ DELETE FROM users WHERE id = 5;
 
 ### Basic CREATE TABLE
 
-```
+```sql
 CREATE TABLE students (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL,
@@ -262,7 +250,7 @@ CREATE TABLE students (
 | UNIQUE | No duplicates allowed |
 | DEFAULT | Default value if none given |
 
-```
+```sql
 CREATE TABLE products (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL,
@@ -274,7 +262,7 @@ CREATE TABLE products (
 
 ## DROP TABLE (Deleting entire table)
 
-```
+```sql
 -- Deletes the entire table (all rows + structure)
 
 DROP TABLE users;
@@ -294,20 +282,18 @@ DROP is different from DELETE:
 
 ## COMPLETE EXAMPLE
 
+```sql
 -- Step 1: Create table
 
-```
 CREATE TABLE employees (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL,
     position TEXT,
     salary INTEGER
 );
-```
 
 -- Step 2: Insert data
 
-```
 INSERT INTO employees (name, position, salary)
 VALUES ('Alice', 'Developer', 50000);
 
@@ -316,30 +302,26 @@ VALUES ('Bob', 'Manager', 70000);
 
 INSERT INTO employees (name, position, salary)
 VALUES ('Carol', 'Designer', 45000);
-```
+
 
 -- Step 3: Query data
 
-```
 SELECT * FROM employees WHERE salary > 48000;
-```
+
 
 -- Step 4: Update data
 
-```
 UPDATE employees SET salary = 55000 WHERE name = 'Alice';
-```
+
 
 -- Step 5: Delete data
 
-```
 DELETE FROM employees WHERE name = 'Carol';
-```
 
 -- Step 6: See final table
 
-```
 SELECT * FROM employees;
+
 ```
 
 ---
