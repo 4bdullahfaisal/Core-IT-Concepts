@@ -195,7 +195,7 @@ A filing cabinet with folders and documents.
 
 ### File system structure (hierarchy)
 
-```
+```bash
 Root (C:\ on Windows, / on Mac/Linux)
     |
     |-- Users/
@@ -265,7 +265,7 @@ A single sequence of execution inside a process.
 
 ### Visual
 
-```
+```bash
 Process (Chrome)
     |
     |-- Thread 1: Tab 1 (reddit.com)
@@ -324,7 +324,7 @@ Time: Usually 10-60 seconds
 
 ## SUMMARY DIAGRAM
 
-```
+```bash
 Computer Hardware (CPU, RAM, Disk)
         |
         v
