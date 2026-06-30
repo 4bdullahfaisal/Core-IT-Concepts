@@ -21,25 +21,31 @@ Each locker has a number (0, 1, 2, 3...).
 
 ### Creating an array
 
+```python
 fruits = ["apple", "banana", "cherry"]
+```
 
 ### Accessing by position (index starts at 0)
 
-`print(fruits[0])   # apple`
+```python
+print(fruits[0])   # apple
 
-`print(fruits[1])   # banana`
+print(fruits[1])   # banana
 
-`print(fruits[2])   # cherry`
+print(fruits[2])   # cherry
+```
 
 ### Changing a value
 
-`fruits[1] = "blueberry"`
+```python
+fruits[1] = "blueberry"
 
-`print(fruits)      # ["apple", "blueberry", "cherry"]`
+print(fruits)      # ["apple", "blueberry", "cherry"]
+```
 
 ### Index positions visual
 
-```
+```python
 Index:   0         1         2
 Value: "apple"  "banana"  "cherry"
 ```
@@ -48,45 +54,49 @@ Value: "apple"  "banana"  "cherry"
 
 ### Creating
 
-`numbers = [10, 20, 30, 40]`
+```python
+numbers = [10, 20, 30, 40]
+```
 
 ### Length (how many items)
 
-`print(len(numbers))   # 4`
+```python
+print(len(numbers))            # 4
+```
 
 ### Add to end
 
-```
+```python
 numbers.append(50)
-print(numbers)        # [10, 20, 30, 40, 50]
+print(numbers)                 # [10, 20, 30, 40, 50]
 ```
 
 ### Remove from end
 
-```
+```python
 last = numbers.pop()
-print(last)           # 50
-print(numbers)        # [10, 20, 30, 40]
+print(last)                    # 50
+print(numbers)                 # [10, 20, 30, 40]
 ```
 
 ### Remove from specific position
 
-```
-removed = numbers.pop(1)   # removes index 1 (20)
-print(removed)        # 20
-print(numbers)        # [10, 30, 40]
+```python
+removed = numbers.pop(1)       # removes index 1 (20)
+print(removed)                 # 20
+print(numbers)                 # [10, 30, 40]
 ```
 
 ### Loop through an array
 
-```
+```python
 for item in numbers:
-    print(item)       # prints 10, then 30, then 40
+    print(item)                # prints 10, then 30, then 40
 ```
 
 ### Loop with index
 
-```
+```python
 for i in range(len(numbers)):
     print(i, numbers[i])
 ```
@@ -123,7 +133,7 @@ Treasure hunt. Each clue tells you where the next clue is.
 
 ### Visual
 
-```
+```python
 Array:  [10][20][30]   (boxes side by side)
 
 Linked List:  [10|*] --> [20|*] --> [30|/]
@@ -132,7 +142,7 @@ Linked List:  [10|*] --> [20|*] --> [30|/]
 
 ### Simple node class (the building block)
 
-```
+```python
 class Node:
     def __init__(self, data):
         self.data = data    # the value
@@ -141,7 +151,7 @@ class Node:
 
 ### Create three nodes
 
-```
+```python
 node1 = Node(10)
 node2 = Node(20)
 node3 = Node(30)
@@ -149,14 +159,14 @@ node3 = Node(30)
 
 ### Link them
 
-```
+```python
 node1.next = node2
 node2.next = node3
 ```
 
 ### Traverse (walk through) the linked list
 
-```
+```python
 current = node1
 while current is not None:
     print(current.data)   # 10, then 20, then 30
@@ -193,7 +203,7 @@ Stack of plates: you put a plate on top, you take a plate from top.
 
 ### Visual
 
-```
+```python
 Push 1:  [1]
 Push 2:  [2]
          [1]
@@ -216,32 +226,36 @@ Pop:     remove 3 -> stack becomes [2][1]
 
 ### Stack using Python list
 
-`stack = []`
+```python
+stack = []
+```
 
 ### Push
 
-```
+```python
 stack.append(1)
 stack.append(2)
 stack.append(3)
-print(stack)   # [1, 2, 3]
+print(stack)           # [1, 2, 3]
 ```
 
 ### Pop
 
-```
+```python
 top = stack.pop()
-print(top)     # 3
-print(stack)   # [1, 2]
+print(top)             # 3
+print(stack)           # [1, 2]
 
 top = stack.pop()
-print(top)     # 2
-print(stack)   # [1]
+print(top)             # 2
+print(stack)           # [1]
 ```
 
 ### Peek (look without removing)
 
-`print(stack[-1])   # 1`
+```python
+print(stack[-1])       # 1
+```
 
 ### Real world uses of stacks
 
@@ -252,7 +266,7 @@ print(stack)   # [1]
 
 ### Balanced parentheses example
 
-```
+```python
 def is_balanced(text):
     stack = []
     for char in text:
@@ -284,7 +298,7 @@ Line at a store: first person in line gets served first.
 
 ### Visual
 
-```
+```python
 Enqueue 1: [1]
 Enqueue 2: [1, 2]
 Enqueue 3: [1, 2, 3]
@@ -305,11 +319,13 @@ Dequeue:   remove 2 -> [3]
 
 ### Simple queue using list (pop(0) is slow)
 
-`queue = []`
+```python
+queue = []
+```
 
 ### Enqueue
 
-```
+```python
 queue.append(1)
 queue.append(2)
 queue.append(3)
@@ -318,7 +334,7 @@ print(queue)   # [1, 2, 3]
 
 ### Dequeue
 
-```
+```python
 front = queue.pop(0)
 print(front)   # 1
 print(queue)   # [2, 3]
@@ -328,11 +344,13 @@ print(queue)   # [2, 3]
 
 from collections import deque
 
-`queue = deque()`
+```python
+queue = deque()
+```
 
 ### Enqueue
 
-```
+```python
 queue.append(1)
 queue.append(2)
 queue.append(3)
@@ -341,7 +359,7 @@ print(queue)   # deque([1, 2, 3])
 
 ### Dequeue
 
-```
+```python
 front = queue.popleft()
 print(front)   # 1
 print(queue)   # deque([2, 3])
@@ -371,7 +389,7 @@ print(queue)   # deque([2, 3])
 
 ### ARRAY (list in Python)
 
-```
+```python
 arr = [1, 2, 3]
 arr.append(4)      # add to end
 arr.pop()          # remove from end
@@ -380,7 +398,7 @@ arr[0]             # get first
 
 ### STACK
 
-```
+```python
 stack = []
 stack.append(1)    # push
 stack.pop()        # pop
@@ -388,7 +406,7 @@ stack.pop()        # pop
 
 ### QUEUE (fast way)
 
-```
+```python
 from collections import deque
 q = deque()
 q.append(1)        # enqueue
@@ -397,7 +415,7 @@ q.popleft()        # dequeue
 
 ### LINKED LIST (manual - just know concept)
 
-```
+```python
 class Node:
     def __init__(self, data):
         self.data = data
@@ -405,5 +423,3 @@ class Node:
 
 ```
 ---
-
-**End of Data Structures Notes**
