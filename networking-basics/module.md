@@ -39,11 +39,11 @@ A unique identifier for a device on a network. Like a house address.
 
 ### How to find your IP
 
-```
-Windows (Command Prompt):
+```bash
+Windows      # Command Prompt
 ipconfig
 
-Mac/Linux (Terminal):
+Mac/Linux    # Terminal
 ifconfig
 or
 ip addr
@@ -76,7 +76,7 @@ Apartment building:
 
 ### Visual
 
-```
+```bash
 Your computer (192.168.1.100)
     |
     |-- Port 80: Web browser
@@ -109,7 +109,7 @@ You know "John's Pizza Shop" (domain name). You don't know the address (IP). You
 
 ### Visual
 
-```
+```bash
 User: "google.com"
    |
    v
@@ -119,12 +119,12 @@ DNS Server: "What IP is google.com?"
 DNS Server: "142.250.190.46"
    |
    v
-User connects to 142.250.190.46
+User connects to "142.250.190.46"
 ```
 
 ### How to test DNS
 
-```
+```bash
 Windows/Mac/Linux (Terminal):
 nslookup google.com
 
