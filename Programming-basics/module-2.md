@@ -20,14 +20,14 @@ A car is an object:
 
 ### The simplest class
 
-```
+```python
 class Dog:
     pass
 ```
 
 ### Class with data (attributes)
 
-```
+```python
 class Dog:
     def __init__(self, name):
         self.name = name
@@ -46,16 +46,16 @@ What is self.name = name?
 
 ### Creating an object from a class
 
-```
+```python
 my_dog = Dog("Rex")
-print(my_dog.name)   # prints: Rex
+print(my_dog.name)       # prints: Rex
 ```
 
 ### Class with actions (methods)
 
 A method is just a function inside a class.
 
-```
+```python
 class Dog:
     def __init__(self, name):
         self.name = name
@@ -73,20 +73,20 @@ print(my_dog.greet())    # Rex says hi
 
 ### Multiple objects from the same class
 
-```
+```python
 dog1 = Dog("Rex")
 dog2 = Dog("Buddy")
 
-print(dog1.name)   # Rex
-print(dog2.name)   # Buddy
-print(dog1.greet()) # Rex says hi
-print(dog2.greet()) # Buddy says hi
+print(dog1.name)         # Rex
+print(dog2.name)         # Buddy
+print(dog1.greet())      # Rex says hi
+print(dog2.greet())      # Buddy says hi
 
 ```
 
 ### Class with more data
 
-```
+```python
 class Person:
     def __init__(self, name, age):
         self.name = name
@@ -113,7 +113,7 @@ print(p1.introduce())  # My name is Alice and I am 25 years old
 
 - Without OOP (separate data and functions):
 
-```
+```python
 name1 = "Alice"
 age1 = 25
 name2 = "Bob"
@@ -128,7 +128,7 @@ print(can_vote(name2, age2))  # False
 
 - With OOP (data + actions together):
 
-```
+```python
 class Person:
     def __init__(self, name, age):
         self.name = name
@@ -155,7 +155,8 @@ print(bob.can_vote())    # False
 | Object | Instance of a class | my_dog = Dog("Rex") |
 
 ### Practice example
-```
+
+```python
 class Book:
     def __init__(self, title, author):
         self.title = title
