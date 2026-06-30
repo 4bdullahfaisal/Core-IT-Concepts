@@ -22,7 +22,7 @@ A bank account: balance is private, you use deposit() and withdraw() methods.
 
 ### Without encapsulation (bad) 
 
- ```
+ ```python
 class BankAccount:
     def __init__(self):
         self.balance = 100
@@ -33,7 +33,7 @@ acc.balance = -1000   # BAD! No protection
 
 ### With encapsulation (good)
 
-```
+```python
 class BankAccount:
     def __init__(self):
         self.__balance = 100   # __ means private
@@ -72,7 +72,7 @@ print(acc.get_balance())   # 150
 
 ### Practice example
 
-```
+```python
 class Person:
     def __init__(self):
         self.__age = 0
@@ -110,7 +110,7 @@ Driving a car: You see steering wheel, pedals (simple interface). You don't see 
 
 ### Without abstraction (bad)
 
-```
+```python
 car = Car()
 car.ignition_on()
 car.fuel_pump_start()
@@ -122,14 +122,14 @@ car.press_gas()
 
 ### With abstraction (good)
 
-```
+```python
 car = Car()
 car.start()   # One simple method hides all those steps
 ```
 
 ### Private methods (internal helpers)
 
-```
+```python
 class CoffeeMachine:
     def make_coffee(self):
         self.__heat_water()
@@ -154,7 +154,7 @@ print(machine.make_coffee())   # User only needs this
 
 from abc import ABC, abstractmethod
 
-```
+```python
 class Payment(ABC):
     @abstractmethod
     def pay(self, amount):
@@ -194,7 +194,7 @@ Poly = many, Morph = form, Polymorphism = many forms
 
 ### Example
 
-```
+```python
 class Bird:
     def fly(self):
         return "Bird flies"
@@ -217,7 +217,7 @@ for thing in things_that_fly:
 
 You can write code that works with any object that has a certain method.
 
-```
+```python
 def make_it_fly(flying_object):
     print(flying_object.fly())
 
@@ -228,7 +228,7 @@ make_it_fly(Superman())   # Superman flies with cape
 
 ### Duck typing (Python's style)
 
-```
+```python
 class Duck:
     def sound(self):
         return "Quack"
@@ -261,7 +261,7 @@ Python doesn't care about the class name. Only cares that sound() exists.
 
 ### Basic inheritance
 
-```
+```python
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -272,7 +272,7 @@ class Animal:
     def sleep(self):
         return self.name + " is sleeping"
 
-class Dog(Animal):   # (Animal) means Dog inherits from Animal
+class Dog(Animal):     # (Animal) means Dog inherits from Animal
     pass
 
 my_dog = Dog("Rex")
@@ -281,7 +281,7 @@ print(my_dog.eat())    # Rex is eating (inherited)
 
 ### Adding new methods to child
 
-```
+```python
 class Dog(Animal):
     def bark(self):
         return self.name + " says Woof!"
@@ -292,18 +292,18 @@ print(my_dog.bark())   # Rex says Woof! (new method)
 
 ### Overriding parent methods
 
-```
+```python
 class Dog(Animal):
     def eat(self):     # SAME name as parent
         return self.name + " is eating dog food VERY fast"
 
 my_dog = Dog("Rex")
-print(my_dog.eat())   # Rex is eating dog food VERY fast
+print(my_dog.eat())    # Rex is eating dog food VERY fast
 ```
 
 ### Using super() to call parent method
 
-```
+```python
 class Dog(Animal):
     def eat(self):
         parent_result = super().eat()   # calls Animal's eat
@@ -315,7 +315,7 @@ print(my_dog.eat())   # Rex is eating like a good dog
 
 ### Multiple child classes example
 
-```
+```python
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -350,7 +350,7 @@ for a in animals:
 
 ### Practice example
 
-```
+```python
 class Shape:
     def __init__(self, color):
         self.color = color
@@ -383,7 +383,7 @@ print(s.get_color(), s.area())   # blue 16
 
 from abc import ABC, abstractmethod
 
-```
+```python
 class Animal(ABC):
     def __init__(self, name):
         self.__name = name
@@ -415,7 +415,7 @@ for animal in animals:
 
 from abc import ABC, abstractmethod
 
-```
+```python
 class Device(ABC):
     def __init__(self, brand):
         self.__brand = brand
