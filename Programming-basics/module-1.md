@@ -31,7 +31,7 @@ Lets the computer make decisions based on true/false questions.
 
 ### Syntax
 
-```
+```python
 if condition:
     # runs if condition is True
 
@@ -51,7 +51,7 @@ else:
 
 ### Example
 
-```
+```python
 temperature = 30
 
 if temperature > 25:
@@ -91,7 +91,7 @@ while loop: You know when to stop (condition-based)
 
 ### Syntax
 
-```
+```python
 for variable in range(count):
     # repeat this block
 ```
@@ -104,7 +104,7 @@ for variable in range(count):
 
 ### Examples
 
-```
+```python
 # Simple - runs 3 times
 for i in range(3):
     print("hello")
@@ -126,14 +126,14 @@ for i in range(5, 10):
 
 ### Syntax
 
-```
+```python
 while condition:
     # repeat this block as long as condition is True
 ```
 
 ### Example
 
-```
+```python
 x = 0
 while x < 3:
     print("x is", x)
@@ -149,7 +149,7 @@ while x < 3:
 
 - If you forget to change the condition, the loop never stops:
 
-```
+```python
 x = 0
 while x < 3:
     print("this prints forever")  # x never changes
@@ -157,7 +157,7 @@ while x < 3:
 
 ### Real-world example
 
-```
+```python
 password = ""
 while password != "secret":
     password = input("Enter password: ")
@@ -187,7 +187,7 @@ Wrap reusable code into a named block. Call it anytime.
 
 ### Syntax
 
-```
+```python
 def function_name():
     # code to run
 
@@ -201,7 +201,7 @@ def function_name(parameter):
 
 ### Simple example (no input, no output)
 
-```
+```python
 def say_hello():
     print("Hello there")
 
@@ -211,7 +211,7 @@ say_hello()
 
 ### With input (parameters)
 
-```
+```python
 def greet_person(name):
     print("Hello", name)
 
@@ -221,7 +221,7 @@ greet_person("Bob")     # prints: Hello Bob
 
 ### With output (return value)
 
-```
+```python
 def add_two(x):
     result = x + 2
     return result
@@ -232,7 +232,7 @@ print(y)
 
 ### Complete example
 
-```
+```python
 def double(number):
     return number * 2
 
@@ -257,7 +257,7 @@ Remainder after division.
 
 Without functions:
 
-```
+```python
 print(5 + 2)
 print(8 + 2)
 print(12 + 2)
@@ -265,7 +265,7 @@ print(12 + 2)
 
 With functions:
 
-```
+```python
 def add_two(x):
     return x + 2
 
@@ -282,7 +282,7 @@ Change +2 to +3 once → all three change.
 
 You can put conditions inside loops, loops inside functions, etc.
 
-```
+```python
 def count_even(numbers):
     count = 0
     for n in numbers:
@@ -297,7 +297,7 @@ print(count_even([1,2,3,4,5,6]))  # prints 3
 
 ## QUICK REFERENCE CARD
 
-```
+```python
 # CONDITION
 if age >= 18:
     print("adult")
